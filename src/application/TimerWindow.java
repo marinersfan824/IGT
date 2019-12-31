@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.Objects;
+import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,6 +35,8 @@ public class TimerWindow extends Application {
     private Label time;
 
     private Timer timer;
+    
+    public static long TIMEZONE_OFFSET;
 
     @Override
     public void start(Stage primaryStage) {
@@ -188,11 +191,13 @@ public class TimerWindow extends Application {
 
     public String formatTime(long time) {
         time *= 50;
-        Date d = new Date(time+18000000);
+        Date d = new Date(time - TIMEZONE_OFFSET);
         return new SimpleDateFormat("HH:mm:ss.SS").format(d);
     }
 
     public static void main(String[] args) {
+    	TimeZone time = TimeZone.getDefault();
+    	TIMEZONE_OFFSET = time.getRawOffset();
         launch(args);
     }
 
