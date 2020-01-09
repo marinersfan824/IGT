@@ -32,7 +32,7 @@ public class Timer implements Runnable {
                     });
 
                 }
-                Thread.sleep(50);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
