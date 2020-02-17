@@ -154,17 +154,17 @@ public class TimerWindow extends Application {
                 File[] directories = Arrays.stream(Objects.requireNonNull(saves.listFiles())).filter(file -> file.isDirectory()).toArray(File[]::new);
 
                 if (directories.length == 0) {
-                	return null;
+                    return null;
                 }
 
                 File latestDirectory = directories[0];
                 long latestDirectoryTime = latestDirectory.lastModified();
                 for (int i = 1; i < directories.length; i++) {
-                	long curDirectoryTime = directories[i].lastModified();
-                	if (curDirectoryTime > latestDirectoryTime) {
-                		latestDirectory = directories[i];
-                		latestDirectoryTime = curDirectoryTime;
-                	}
+                    long curDirectoryTime = directories[i].lastModified();
+                    if (curDirectoryTime > latestDirectoryTime) {
+                        latestDirectory = directories[i];
+                        latestDirectoryTime = curDirectoryTime;
+                    }
                 }
 
                 return latestDirectory;
@@ -194,11 +194,11 @@ public class TimerWindow extends Application {
                         Pattern p = Pattern.compile("(inute\":)(\\d+)");
                         Matcher m = p.matcher(data);
                         if(m.find()) {
-                        	long curTime = Long.parseLong(m.group(2));
-                			if (curTime != this.lastTime) {
-                				this.lastTime = curTime;
+                            long curTime = Long.parseLong(m.group(2));
+                            if (curTime != this.lastTime) {
+                                this.lastTime = curTime;
                                 this.updateLabel(this.formatTime(curTime));
-                			}
+                            }
                         }
                     }
                 }
@@ -215,8 +215,8 @@ public class TimerWindow extends Application {
     }
 
     public static void main(String[] args) {
-    	TimeZone time = TimeZone.getDefault();
-    	TIMEZONE_OFFSET = time.getRawOffset();
+        TimeZone time = TimeZone.getDefault();
+        TIMEZONE_OFFSET = time.getRawOffset();
         launch(args);
     }
 
