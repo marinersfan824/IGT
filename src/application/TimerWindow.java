@@ -35,6 +35,7 @@ public class TimerWindow extends Application {
     private Label time;
 
     private Timer timer;
+    private long lastTime = -1;
     
     public static long TIMEZONE_OFFSET;
 
@@ -151,8 +152,22 @@ public class TimerWindow extends Application {
             } else {
                 timer.setInvalid(false);
                 File[] directories = Arrays.stream(Objects.requireNonNull(saves.listFiles())).filter(file -> file.isDirectory()).toArray(File[]::new);
-                Arrays.sort(directories, Comparator.comparingLong(File::lastModified));
-                return directories[directories.length - 1];
+
+                if (directories.length == 0) {
+                    return null;
+                }
+
+                File latestDirectory = directories[0];
+                long latestDirectoryTime = latestDirectory.lastModified();
+                for (int i = 1; i < directories.length; i++) {
+                    long curDirectoryTime = directories[i].lastModified();
+                    if (curDirectoryTime > latestDirectoryTime) {
+                        latestDirectory = directories[i];
+                        latestDirectoryTime = curDirectoryTime;
+                    }
+                }
+
+                return latestDirectory;
             }
         } catch(Exception e) {
             e.printStackTrace();
@@ -179,7 +194,11 @@ public class TimerWindow extends Application {
                         Pattern p = Pattern.compile("(inute\":)(\\d+)");
                         Matcher m = p.matcher(data);
                         if(m.find()) {
-                            updateLabel(formatTime(Long.parseLong(m.group(2))));
+                            long curTime = Long.parseLong(m.group(2));
+                            if (curTime != this.lastTime) {
+                                this.lastTime = curTime;
+                                this.updateLabel(this.formatTime(curTime));
+                            }
                         }
                     }
                 }
@@ -196,8 +215,8 @@ public class TimerWindow extends Application {
     }
 
     public static void main(String[] args) {
-    	TimeZone time = TimeZone.getDefault();
-    	TIMEZONE_OFFSET = time.getRawOffset();
+        TimeZone time = TimeZone.getDefault();
+        TIMEZONE_OFFSET = time.getRawOffset();
         launch(args);
     }
 
