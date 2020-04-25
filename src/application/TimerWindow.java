@@ -145,7 +145,7 @@ public class TimerWindow extends Application {
 
     public File latestWorld() {
         try {
-            File saves = new File(minecraft_directory.getAbsolutePath()+"\\saves");
+            File saves = new File(minecraft_directory.getAbsolutePath() + File.separator + "saves");
             if(!saves.exists()) {
                 updateLabel("Invalid Folder");
                 timer.setInvalid(true);
@@ -182,7 +182,7 @@ public class TimerWindow extends Application {
     public void updateTime(File save) {
         try {
             if(save != null && save.exists()) {
-                File statsFolder = new File(save.getAbsolutePath() + "\\stats");
+                File statsFolder = new File(save.getAbsolutePath() + File.separator + "stats");
 
                 if(statsFolder.exists()) {
 
