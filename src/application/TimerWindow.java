@@ -11,7 +11,6 @@ import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
@@ -25,7 +24,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 
-public class TimerWindow extends Application {
+public class TimerWindow extends javafx.application.Application {
     private double x, y;
 
     private File minecraft_directory;

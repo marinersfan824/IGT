@@ -1,24 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="IGT:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7b03d0a-005e-4af4-9a5f-bb8e95fb303f" name="Default Changelist" comment="" />
+    <list default="true" id="f7b03d0a-005e-4af4-9a5f-bb8e95fb303f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/IGT_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/JavaFX.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_sdk_11_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IGT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IGT.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/Timer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/Timer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/TimerWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/TimerWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/TimerWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/TimerWindow.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="module-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1Xlak9lBKdkBhPo1uLcTnyXYF7A" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/classes/artifacts/IGT_jar/timer.jar" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15429688" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cakel\Documents\GitHub\IGT" />
+      <recent name="C:\Users\cakel\Documents\GitHub\IGT\src\META-INF" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JAR Application.run">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="application.TimerWindow" />
+      <module name="IGT" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\cakel\Documents\GitHub\IGT\src\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="run" type="JarApplication">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/classes/artifacts/IGT_jar/IGT.jar" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\cakel\Documents\GitHub\IGT\src\javafx-sdk-11.0.2\lib --add-modules=javafx.controls,javafx.fxml" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\cakel\Documents\GitHub\IGT" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="IGT:jar" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JAR Application.run" />
+    </list>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -32,6 +102,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
