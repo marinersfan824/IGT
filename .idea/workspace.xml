@@ -11,14 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f7b03d0a-005e-4af4-9a5f-bb8e95fb303f" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/artifacts/IGT_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/JavaFX.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_sdk_11_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IGT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IGT.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/Timer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/Timer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/TimerWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/TimerWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/TimerWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/TimerWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,17 +45,19 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/classes/artifacts/IGT_jar/timer.jar" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/javafx-sdk-11.0.2/lib" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cakel\Documents\GitHub\IGT\src" />
       <recent name="C:\Users\cakel\Documents\GitHub\IGT" />
       <recent name="C:\Users\cakel\Documents\GitHub\IGT\src\META-INF" />
     </key>
@@ -78,7 +75,8 @@
       <option name="JAR_PATH" value="$PROJECT_DIR$/classes/artifacts/IGT_jar/IGT.jar" />
       <option name="VM_PARAMETERS" value="--module-path C:\Users\cakel\Documents\GitHub\IGT\src\javafx-sdk-11.0.2\lib --add-modules=javafx.controls,javafx.fxml" />
       <option name="WORKING_DIRECTORY" value="C:\Users\cakel\Documents\GitHub\IGT" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="16" />
       <method v="2">
         <option name="BuildArtifacts" enabled="true">
           <artifact name="IGT:jar" />
