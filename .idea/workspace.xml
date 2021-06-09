@@ -10,10 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7b03d0a-005e-4af4-9a5f-bb8e95fb303f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/IGT_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IGT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IGT.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/TimerWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/TimerWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/IGT_jar/IGT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/IGT_jar/IGT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/TimerWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/TimerWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +51,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/javafx-sdk-11.0.2/lib" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bin/javafx-sdk-11.0.2/lib" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />

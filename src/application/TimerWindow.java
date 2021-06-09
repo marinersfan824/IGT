@@ -11,6 +11,7 @@ import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
@@ -24,7 +25,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 
-public class TimerWindow extends javafx.application.Application {
+public class TimerWindow extends Application {
     private double x, y;
 
     private File minecraft_directory;
@@ -190,7 +191,8 @@ public class TimerWindow extends javafx.application.Application {
                     if(playerStats != null && playerStats.length > 0) {
                         File stats = playerStats[0];
                         String data = Files.readAllLines(stats.toPath()).get(0);
-                        Pattern p = Pattern.compile("(inute\":)(\\d+)");
+                        //Replace play_time with inute for 1.6-1.16
+                        Pattern p = Pattern.compile("(play_time\":)(\\d+)");
                         Matcher m = p.matcher(data);
                         if(m.find()) {
                             long curTime = Long.parseLong(m.group(2));
