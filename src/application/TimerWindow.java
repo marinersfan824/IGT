@@ -1,13 +1,10 @@
 package application;
 
 import java.io.File;
+import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.Objects;
-import java.util.TimeZone;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,9 +29,11 @@ public class TimerWindow extends Application {
 
     private static final String DEFAULT_TEXT = "IGT Timer";
 
-    private Label time;
+    private Label rtaTime;
+    private Label igtTime;
 
-    private Timer timer;
+    private Timer rtaTimer;
+    private Timer igtTimer;
     private long lastTime = -1;
     
     public static long TIMEZONE_OFFSET;
@@ -42,14 +41,16 @@ public class TimerWindow extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            timer = new Timer(this, primaryStage);
-            Thread t = new Thread(timer);
+            rtaTimer = new Timer(this, primaryStage);
+            Thread rtaThread = new Thread(rtaTimer);
+            igtTimer = new Timer(this, primaryStage);
+            Thread igtThread = new Thread(igtTimer);
 
             minecraft_directory = defaultDirectory();
 
             primaryStage.initStyle(StageStyle.UNDECORATED);
             BorderPane root = new BorderPane();
-            Scene scene = new Scene(root,300,80);
+            Scene scene = new Scene(root,300,100);
 
             root.setStyle("-fx-background-color: #111111;");
 
@@ -64,10 +65,14 @@ public class TimerWindow extends Application {
             });
 
             Font minecraftFont = Font.loadFont(getClass().getResourceAsStream("/fonts/minecraft.otf"), 40);
-            time = new Label(DEFAULT_TEXT);
-            time.setFont(minecraftFont);
-            time.setTextFill(Paint.valueOf("#eeeeee"));
-            root.setCenter(time);
+            rtaTime = new Label(DEFAULT_TEXT);
+            rtaTime.setFont(minecraftFont);
+            rtaTime.setTextFill(Paint.valueOf("#eeeeee"));
+            root.setTop(rtaTime);
+            igtTime = new Label(DEFAULT_TEXT);
+            igtTime.setFont(minecraftFont);
+            igtTime.setTextFill(Paint.valueOf("#eeeeee"));
+            root.setBottom(igtTime);
 
             ContextMenu menu = new ContextMenu();
 
@@ -93,7 +98,8 @@ public class TimerWindow extends Application {
             primaryStage.setResizable(false);
             primaryStage.setAlwaysOnTop(true);
             primaryStage.setScene(scene);
-            t.start();
+            rtaThread.start();
+            igtThread.start();
             primaryStage.show();
         } catch(Exception e) {
             e.printStackTrace();
@@ -102,7 +108,8 @@ public class TimerWindow extends Application {
 
     @Override
     public void stop() {
-        timer.stop();
+        rtaTimer.stop();
+        igtTimer.stop();
     }
 
 
@@ -147,10 +154,12 @@ public class TimerWindow extends Application {
         try {
             File saves = new File(minecraft_directory.getAbsolutePath() + File.separator + "saves");
             if(!saves.exists()) {
-                updateLabel("Invalid Folder");
-                timer.setInvalid(true);
+                updateLabel("Invalid Folder", "Invalid Folder");
+                rtaTimer.setInvalid(true);
+                igtTimer.setInvalid(true);
             } else {
-                timer.setInvalid(false);
+                igtTimer.setInvalid(false);
+                rtaTimer.setInvalid(false);
                 File[] directories = Arrays.stream(Objects.requireNonNull(saves.listFiles())).filter(file -> file.isDirectory()).toArray(File[]::new);
 
                 if (directories.length == 0) {
@@ -175,8 +184,9 @@ public class TimerWindow extends Application {
         return null;
     }
 
-    public void updateLabel(String text) {
-        time.setText(text);
+    public void updateLabel(String rta, String igt) {
+        rtaTime.setText(rta);
+        igtTime.setText(igt);
     }
 
     public void updateTime(File save) {
@@ -192,13 +202,16 @@ public class TimerWindow extends Application {
                         File stats = playerStats[0];
                         String data = Files.readAllLines(stats.toPath()).get(0);
                         //Replace play_time with inute for 1.6-1.16
-                        Pattern p = Pattern.compile("(play_time\":)(\\d+)");
-                        Matcher m = p.matcher(data);
-                        if(m.find()) {
-                            long curTime = Long.parseLong(m.group(2));
-                            if (curTime != this.lastTime) {
-                                this.lastTime = curTime;
-                                this.updateLabel(this.formatTime(curTime));
+                        Pattern igt = Pattern.compile("(play_time\":)(\\d+)");
+                        Pattern rta = Pattern.compile("(total_world_time\":)(\\d+)");
+                        Matcher igtM = igt.matcher(data);
+                        Matcher rtaM = rta.matcher(data);
+                        if(igtM.find() && rtaM.find()) {
+                            long igt2 = Long.parseLong(igtM.group(2));
+                            long rta2 = Long.parseLong(rtaM.group(2));
+                            if (rta2 != this.lastTime || igt2 != this.lastTime) {
+                                this.lastTime = rta2;
+                                this.updateLabel(this.formatTime(rta2), this.formatTime(igt2));
                             }
                         }
                     }

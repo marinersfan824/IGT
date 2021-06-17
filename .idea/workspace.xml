@@ -10,11 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7b03d0a-005e-4af4-9a5f-bb8e95fb303f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IGT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IGT.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/application/TimerWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/TimerWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/IGT_jar/IGT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/IGT_jar/IGT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/TimerWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/TimerWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +61,7 @@
       <recent name="C:\Users\cakel\Documents\GitHub\IGT\src\META-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.run">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="application.TimerWindow" />
       <module name="IGT" />
